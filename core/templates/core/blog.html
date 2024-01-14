@@ -1,0 +1,35 @@
+{% extends "core/base.html" %}
+{% block Title %}Blog
+    
+    {% endblock  %} 
+{% block h1 %}
+Artículos
+{% endblock  %}
+{% block li %}
+    <li class="breadcrumb-item"><a href="#">Home</a></li>
+    <li class="breadcrumb-item"><a href="#">Páginas</a></li>
+    <li class="breadcrumb-item text-dark" aria-current="page">Actículos</li>
+{% endblock %}
+{% load static %}
+{% block content  %}
+
+    <!-- Article Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-5 wow fadeIn" data-wow-delay="0.1s">
+                    <img class="img-fluid" src="{% static 'core/img/article.jpg' %}" alt="">
+                </div>
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                    <div class="section-title">
+                        <p class="fs-5 fw-medium fst-italic text-primary">Artículo Destacado</p>
+                        <h1 class="display-6">La historia de los videojuegos en el mundo</h1>
+                    </div>
+                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
+                    <p class="mb-4">Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna. Tempor erat elitr rebum at clita.</p>
+                    <a href="" class="btn btn-primary rounded-pill py-3 px-5">Leer Más</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock  %}
