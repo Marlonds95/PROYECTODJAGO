@@ -10,11 +10,4 @@ def about(request):
 
 def contact(request):
     return render(request,"core/contact.html")
-def error(request):
-    return render(request,"core/404.html")
 
-def blog(request):
-    return render(request,"core/blog.html")
-
-def testimonial(request):
-    return render(request,"core/testimonial.html")

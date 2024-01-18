@@ -6,8 +6,8 @@
 Contacto
 {% endblock  %}
 {% block li %}
-<li class="breadcrumb-item"><a href="#">Home</a></li>
-<li class="breadcrumb-item"><a href="#">Páginas</a></li>
+<li class="breadcrumb-item">Home</a></li>
+<li class="breadcrumb-item">Páginas</a></li>
 <li class="breadcrumb-item text-dark" aria-current="page">Contacto</li>
 {% endblock %}
 {% load static %}
@@ -19,21 +19,22 @@ Contacto
         <div class="section-title text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
             <p class="fs-5 fw-medium fst-italic text-primary">Contáctenos</p>
             <h1 class="display-6">Si tiene alguna consulta, por favor contáctenos</h1>
-        </div>
+    
+            </div>
         <div class="row g-5 mb-5">
             <div class="col-md-4 text-center wow fadeInUp" data-wow-delay="0.3s">
                 <div class="btn-square mx-auto mb-3">
                     <i class="fa fa-envelope fa-2x text-white"></i>
                 </div>
-                <p class="mb-2">info@example.com</p>
-                <p class="mb-0">soporte@example.com</p>
+                <p class="mb-2">info@gamestore.com</p>
+                
             </div>
             <div class="col-md-4 text-center wow fadeInUp" data-wow-delay="0.4s">
                 <div class="btn-square mx-auto mb-3">
                     <i class="fa fa-phone fa-2x text-white"></i>
                 </div>
                 <p class="mb-2">+593 997 762534</p>
-                <p class="mb-0">+593 927 764534</p>
+              
             </div>
             <div class="col-md-4 text-center wow fadeInUp" data-wow-delay="0.5s">
                 <div class="btn-square mx-auto mb-3">
@@ -45,36 +46,50 @@ Contacto
         </div>
         <div class="row g-5">
             <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                <h3 class="mb-4">¿Necesita un formulario de contacto funcional?</h3>
-                <p class="mb-4">El formulario de contacto está actualmente inactivo. Obtenga un formulario de contacto funcional y operativo con Ajax y PHP en pocos minutos. Simplemente copie y pegue los archivos, agregue un poco de código y ¡listo! <a href="https://htmlcodex.com/contact-form">Descargar Ahora</a>.</p>
-                <form>
+                <h3 class="mb-4">Contáctenos</h3>
+                <p class="mb-4">
+                {% if 'ok' in request.GET %}
+               <p><b>Su mensaje se ha enviado correctamente, pronto nos pondremos en contacto</b></p>
+             {% endif %}
+             {% if 'fail' in request.GET %}
+               <p><b>Hubo un problema con el envío, por favor intenta más tarde</b></p>
+             {% endif %}
+             <form action="" method="POST">
+                {% csrf_token %}
                     <div class="row g-3">
                         <div class="col-md-6">
                             <div class="form-floating">
-                                <input type="text" class="form-control" id="name" placeholder="Su Nombre">
-                                <label for="name">Su Nombre</label>
+                                <label>Nombre *</label>
+                                <div class="input-group">
+                                  {{contact_form.name}}
+                                </div>
+                                {{contact_form.name.errors}}
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-floating">
-                                <input type="email" class="form-control" id="email" placeholder="Su Correo Electrónico">
-                                <label for="email">Su Correo Electrónico</label>
+                                <div class="input-group">
+                                    {{contact_form.email}}
+                                  </div>
+                                  {{contact_form.email.errors}}
                             </div>
                         </div>
+                        
                         <div class="col-12">
                             <div class="form-floating">
-                                <input type="text" class="form-control" id="subject" placeholder="Asunto">
-                                <label for="subject">Asunto</label>
+                                <label>Mensaje *</label>
+                 <div class="input-group">
+                   {{contact_form.message}}
+                 </div>
+                 {{contact_form.message.errors}}
                             </div>
                         </div>
                         <div class="col-12">
-                            <div class="form-floating">
-                                <textarea class="form-control" placeholder="Deje un mensaje aquí" id="message" style="height: 120px"></textarea>
-                                <label for="message">Mensaje</label>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <button class="btn btn-primary rounded-pill py-3 px-5" type="submit">Enviar Mensaje</button>
+                            <input
+                   type="submit"
+                   class="btn btn-primary btn-block py-2"
+                   value="Enviar"
+                 />
                         </div>
                     </div>
                 </form>

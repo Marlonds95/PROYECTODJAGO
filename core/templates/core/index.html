@@ -13,7 +13,7 @@
                             <div class="col-lg-7 text-center">
                                 <p class="fs-4 text-white animated zoomIn">Bienvenido a <strong class="text-dark">GAME Store</strong></p>
                                 <h1 class="display-1 text-dark mb-4 animated zoomIn">Los Mejores Precios & Los Títulos Más Recientes</h1>
-                                <a href="" class="btn btn-light rounded-pill py-3 px-5 animated zoomIn">Explorar Más</a>
+                                <a href="{% url 'about'  %}" class="btn btn-light rounded-pill py-3 px-5 animated zoomIn">Explorar Más</a>
                             </div>
                         </div>
                     </div>
@@ -27,7 +27,7 @@
                             <div class="col-lg-7 text-center">
                                 <p class="fs-4 text-white animated zoomIn">Bienvenido a <strong class="text-dark">GAME Store</strong></p>
                                 <h1 class="display-1 text-dark mb-4 animated zoomIn">Los Mejores Precios & Los Títulos Más Recientes</h1>
-                                <a href="" class="btn btn-light rounded-pill py-3 px-5 animated zoomIn">Explorar Más</a>
+                                <a href="{% url 'about'  %}" class="btn btn-light rounded-pill py-3 px-5 animated zoomIn">Explorar Más</a>
                             </div>
                         </div>
                     </div>
@@ -111,9 +111,9 @@
                     <p class="fs-5 fw-medium fst-italic text-primary">Artículo Destacado</p>
                     <h1 class="display-6">La historia de los videojuegos en el mundo</h1>
                 </div>
-                <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
-                <p class="mb-4">Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna. Tempor erat elitr rebum at clita.</p>
-                <a href="" class="btn btn-primary rounded-pill py-3 px-5">Leer Más</a>
+                <p class="mb-4">Durante bastante tiempo ha sido complicado señalar cual fue el primer videojuego, principalmente debido a las múltiples definiciones de este que se han ido estableciendo, pero se puede considerar como primer videojuego el Nought and crosses, también llamado OXO, desarrollado por Alexander S.Douglas en 1952.</p>
+                <p class="mb-4">Generalmente se considera que el primer videojuego fue Pong, un sencillo juego de ping pong lanzado en 1972, pero hay quien tira la fecha ....</p>
+                <a href="{% url 'blog'  %}" class="btn btn-primary rounded-pill py-3 px-5">Leer Más</a>
             </div>
         </div>
     </div>
@@ -222,8 +222,8 @@
                         <h4 class="text-primary">$49.99</h4>
                     </div>
                     <div class="store-overlay">
-                        <a href="" class="btn btn-primary rounded-pill py-2 px-4 m-2">Más Detalles <i class="fa fa-arrow-right ms-2"></i></a>
-                        <a href="" class="btn btn-dark rounded-pill py-2 px-4 m-2">Añadir al Carrito <i class="fa fa-cart-plus ms-2"></i></a>
+                        <a href="{% url 'store'  %}" class="btn btn-primary rounded-pill py-2 px-4 m-2">Más Detalles <i class="fa fa-arrow-right ms-2"></i></a>
+                        
                     </div>
                 </div>
             </div>
@@ -243,8 +243,8 @@
                         <h4 class="text-primary">$59.99</h4>
                     </div>
                     <div class="store-overlay">
-                        <a href="" class="btn btn-primary rounded-pill py-2 px-4 m-2">Más Detalles <i class="fa fa-arrow-right ms-2"></i></a>
-                        <a href="" class="btn btn-dark rounded-pill py-2 px-4 m-2">Añadir al Carrito <i class="fa fa-cart-plus ms-2"></i></a>
+                        <a href="{% url 'store'  %}" class="btn btn-primary rounded-pill py-2 px-4 m-2">Más Detalles <i class="fa fa-arrow-right ms-2"></i></a>
+                        
                     </div>
                 </div>
             </div>
@@ -264,8 +264,8 @@
                         <h4 class="text-primary">$39.99</h4>
                     </div>
                     <div class="store-overlay">
-                        <a href="" class="btn btn-primary rounded-pill py-2 px-4 m-2">Más Detalles <i class="fa fa-arrow-right ms-2"></i></a>
-                        <a href="" class="btn btn-dark rounded-pill py-2 px-4 m-2">Añadir al Carrito <i class="fa fa-cart-plus ms-2"></i></a>
+                        <a href="{% url 'store'  %}" class="btn btn-primary rounded-pill py-2 px-4 m-2">Más Detalles <i class="fa fa-arrow-right ms-2"></i></a>
+                     
                     </div>
                 </div>
             </div>
@@ -276,127 +276,4 @@
     </div>
 </div>
 <!-- Store End -->
-
-
-<!-- Testimonial Start -->
-<div class="container-fluid py-5">
-    <div class="container">
-        <div class="section-title text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-            <p class="fs-5 fw-medium fst-italic text-primary">Testimonios</p>
-            <h1 class="display-6">Lo que dicen nuestros clientes sobre nuestros videojuegos</h1>
-        </div>
-        <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.5s">
-            <div class="testimonial-item p-4 p-lg-5">
-                <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vitae ultricies lectus. Cras tincidunt varius arcu, nec aliquet urna. Fusce auctor, ligula sit amet luctus fringilla, justo odio pretium tortor, a dignissim felis eros et mauris.</p>
-                <div class="d-flex align-items-center justify-content-center">
-                    <img class="img-fluid flex-shrink-0" src="{% static 'core/img/testimonial-1.jpg' %}" alt="">
-                    <div class="text-start ms-3">
-                        <h5>Nombre del Cliente</h5>
-                        <span class="text-primary">Profesión</span>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-item p-4 p-lg-5">
-                <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vitae ultricies lectus. Cras tincidunt varius arcu, nec aliquet urna. Fusce auctor, ligula sit amet luctus fringilla, justo odio pretium tortor, a dignissim felis eros et mauris.</p>
-                <div class="d-flex align-items-center justify-content-center">
-                    <img class="img-fluid flex-shrink-0" src="{% static 'core/img/testimonial-2.jpg' %}" alt="">
-                    <div class="text-start ms-3">
-                        <h5>Nombre del Cliente</h5>
-                        <span class="text-primary">Profesión</span>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-item p-4 p-lg-5">
-                <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vitae ultricies lectus. Cras tincidunt varius arcu, nec aliquet urna. Fusce auctor, ligula sit amet luctus fringilla, justo odio pretium tortor, a dignissim felis eros et mauris.</p>
-                <div class="d-flex align-items-center justify-content-center">
-                    <img class="img-fluid flex-shrink-0" src="{% static 'core/img/testimonial-3.jpg' %}" alt="">
-                    <div class="text-start ms-3">
-                        <h5>Nombre del Cliente</h5>
-                        <span class="text-primary">Profesión</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Testimonial End -->
-
-
-<!-- Contact Start -->
-<div class="container-xxl contact py-5">
-    <div class="container">
-        <div class="section-title text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-            <p class="fs-5 fw-medium fst-italic text-primary">Contáctenos</p>
-            <h1 class="display-6">Si tiene alguna consulta, por favor contáctenos</h1>
-        </div>
-        <div class="row g-5 mb-5">
-            <div class="col-md-4 text-center wow fadeInUp" data-wow-delay="0.3s">
-                <div class="btn-square mx-auto mb-3">
-                    <i class="fa fa-envelope fa-2x text-white"></i>
-                </div>
-                <p class="mb-2">info@example.com</p>
-                <p class="mb-0">soporte@example.com</p>
-            </div>
-            <div class="col-md-4 text-center wow fadeInUp" data-wow-delay="0.4s">
-                <div class="btn-square mx-auto mb-3">
-                    <i class="fa fa-phone fa-2x text-white"></i>
-                </div>
-                <p class="mb-2">+593 997 762534</p>
-                <p class="mb-0">+593 927 764534</p>
-            </div>
-            <div class="col-md-4 text-center wow fadeInUp" data-wow-delay="0.5s">
-                <div class="btn-square mx-auto mb-3">
-                    <i class="fa fa-map-marker-alt fa-2x text-white"></i>
-                </div>
-                <p class="mb-2">123 Calle</p>
-                <p class="mb-0">Quito, EC.</p>
-            </div>
-        </div>
-        <div class="row g-5">
-            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                <h3 class="mb-4">¿Necesita un formulario de contacto funcional?</h3>
-                <p class="mb-4">El formulario de contacto está actualmente inactivo. Obtenga un formulario de contacto funcional y operativo con Ajax y PHP en pocos minutos. Simplemente copie y pegue los archivos, agregue un poco de código y ¡listo! <a href="https://htmlcodex.com/contact-form">Descargar Ahora</a>.</p>
-                <form>
-                    <div class="row g-3">
-                        <div class="col-md-6">
-                            <div class="form-floating">
-                                <input type="text" class="form-control" id="name" placeholder="Su Nombre">
-                                <label for="name">Su Nombre</label>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-floating">
-                                <input type="email" class="form-control" id="email" placeholder="Su Correo Electrónico">
-                                <label for="email">Su Correo Electrónico</label>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-floating">
-                                <input type="text" class="form-control" id="subject" placeholder="Asunto">
-                                <label for="subject">Asunto</label>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-floating">
-                                <textarea class="form-control" placeholder="Deje un mensaje aquí" id="message" style="height: 120px"></textarea>
-                                <label for="message">Mensaje</label>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <button class="btn btn-primary rounded-pill py-3 px-5" type="submit">Enviar Mensaje</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="h-100">
-                    <iframe class="w-100 rounded"
-                        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15959.165307856501!2d-78.48655964999999!3d-0.21076085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sec!4v1704513386927!5m2!1ses!2sec"
-                        frameborder="0" style="height: 100%; min-height: 300px; border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Contact Start -->
 {% endblock  %}

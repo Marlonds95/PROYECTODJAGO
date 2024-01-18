@@ -14,6 +14,7 @@
     <!-- Favicon -->
     <link href="{% static 'core/img/favicon.ico' %}" rel="icon">
 
+    
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -54,7 +55,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto">
-                        <a href="{% url 'index'  %}" class="nav-item nav-link active">Home</a>
+                        <a href="{% url 'index'  %}" class="nav-item nav-link ">Home</a>
                         <a href="{% url 'about'  %}" class="nav-item nav-link">Acerca de</a>
                         <a href="{% url 'store'  %}" class="nav-item nav-link">Tienda</a>
                         <div class="nav-item dropdown">
@@ -62,14 +63,14 @@
                             <div class="dropdown-menu bg-light rounded-0 m-0">
                                 <a href="{% url 'feature'  %}" class="dropdown-item">Novedades</a>
                                 <a href="{% url 'blog'  %}" class="dropdown-item">Blog Articulos</a>
-                                <a href="{% url 'testimonial'  %}" class="dropdown-item">Testimonios</a>
-                                <a href="{% url '404'  %}" class="dropdown-item">404 Page</a>
+                                
+                         
                             </div>
                         </div>
                         <a href="{% url 'contact'  %}" class="nav-item nav-link">Contact</a>
                     </div>
                     <div class="border-start ps-4 d-none d-lg-block">
-                        <button type="button" class="btn btn-sm p-0"><i class="fa fa-search"></i></button>
+                        
                     </div>
                 </div>
             </nav>
@@ -95,51 +96,64 @@
     {% block content %}
  {% endblock  %}
 
-    <!-- Footer Start -->
-    <div class="container-fluid bg-dark footer mt-5 py-5 wow fadeIn" data-wow-delay="0.1s">
-        <div class="container py-5">
-            <div class="row g-5">
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="text-primary mb-4">Nuestra Oficina</h4>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt text-primary me-3"></i>123 Street, Quito, Ecuador</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt text-primary me-3"></i>+593 997 762534</p>
-                    <p class="mb-2"><i class="fa fa-envelope text-primary me-3"></i>info@example.com</p>
-                    <div class="d-flex pt-3">
-                        <a class="btn btn-square btn-primary rounded-circle me-2" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-square btn-primary rounded-circle me-2" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-square btn-primary rounded-circle me-2" href=""><i class="fab fa-youtube"></i></a>
-                        <a class="btn btn-square btn-primary rounded-circle me-2" href=""><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="text-primary mb-4">Acceso rápido</h4>
-                    <a class="btn btn-link" href="">Acerca de</a>
-                    <a class="btn btn-link" href="">Contactanos</a>
-                    <a class="btn btn-link" href="">Nuestros servicios</a>
-                    <a class="btn btn-link" href="">Terminos & Condiciones</a>
-                    <a class="btn btn-link" href="">Soporte</a>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="text-primary mb-4">Horarios </h4>
-                    <p class="mb-1">Lunes - Viernes</p>
-                    <h6 class="text-light">09:00 am - 07:00 pm</h6>
-                    <p class="mb-1">Sábado</p>
-                    <h6 class="text-light">09:00 am - 12:00 pm</h6>
-                    <p class="mb-1">Domingo</p>
-                    <h6 class="text-light">Cerrado</h6>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="text-primary mb-4">Novedades</h4>
-                    <p>Quieres mas información, dejanos tu correo.</p>
-                    <div class="position-relative w-100">
-                        <input class="form-control text-primary bg-transparent w-100 py-3 ps-4 pe-5" type="email" placeholder=" email">
-                        <button type="button" class="  btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">Registrarse</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+ <footer class="footer text-faded text-center py-5">
+    <div class="row g-5 mb-5">
+      <p class="m-0">
+        {% if URL_TWITTER != null %}
+          <a href="{{URL_TWITTER}}" target="_blank" class="link wow fadeInUp" data-wow-delay="0.3s">
+            <span class="fa-stack fa-lg "style="color: black;">
+                <img class="w-100" src="{% static 'core/img/twitter.jpg'%}" alt="Image">
+            </span>
+          </a>
+        {% endif %}
+        {% if URL_FACEBOOK != null %}
+          <a href="{{URL_FACEBOOK}}" target="_blank" class="link wow fadeInUp" data-wow-delay="0.3s">
+            <span class="fa-stack fa-lg ">
+                <img class="w-100" src="{% static 'core/img/facebook.avif'%}" alt="Image">
+              
+            </span>
+          </a>
+        {% endif %}
+        {% if URL_INSTAGRAM != null %}
+          <a href="{{URL_INSTAGRAM}}"  target="_blank" class="link wow fadeInUp" data-wow-delay="0.3s" >
+            <span class="fa-stack fa-lg ">
+                <img class="w-100" src="{% static 'core/img/instagram.avif'%}" alt="Image">
+            </span>
+          </a>
+        {% endif %}
+        {% if URL_LINKEDIN != null %}
+          <a href="{{URL_LINKEDIN}}"  target="_blank" class="link wow fadeInUp" data-wow-delay="0.3s" >
+            <span class="fa-stack fa-lg ">
+                <img class="w-100" src="{% static 'core/img/linkedin.avif'%}" alt="Image">
+            </span>
+          </a>
+        {% endif %}
+        {% if URL_YOUTUBE != null %}
+          <a href="{{URL_YOUTUBE}}"  target="_blank" class="link wow fadeInUp" data-wow-delay="0.3s" >
+            <span class="fa-stack fa-lg ">
+                <img class="w-100" src="{% static 'core/img/youtube.avif'%}" alt="Image">
+            </span>
+          </a>
+        {% endif %}
+        {% if URL_TELEGRAM != null %}
+          <a href="{{URL_TELEGRAM}}"  target="_blank" class="link wow fadeInUp" data-wow-delay="0.3s" >
+            <span class="fa-stack fa-lg ">
+                <img class="w-100" src="{% static 'core/img/11.jpg'%}" alt="Image">
+            </span>
+          </a>
+        {% endif %}
+      </p>
+      <hr>
+      <p class="m-0 mbt">
+        {% load pages_extra %}
+        {% get_pages as pages %}
+        {% for page in pages %}
+        <a href="{% url 'policies' page.id  %}" class="link"> {{page.title}}</a>{% if not forloop.last %}. {% endif %}
+        {% endfor %}
+      </p>
+      <p class="m-0 mbt1">&copy; GAMESTORE </p>
     </div>
-    <!-- Footer End -->
+  </footer>
 
 
     <!-- Copyright Start -->
@@ -147,7 +161,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    &copy; <a class="fw-medium" href="#">Game Store</a>, All Right Reserved.
+                    &copy; <a class="fw-medium" href="{% url 'index'  %}">Game Store</a>
                 </div>
                 <div class="col-md-6 text-center text-md-end">
                     <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->

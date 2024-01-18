@@ -6,8 +6,8 @@
 Tienda
 {% endblock  %}
 {% block li %}
-<li class="breadcrumb-item"><a href="#">Home</a></li>
-<li class="breadcrumb-item"><a href="#">Páginas</a></li>
+<li class="breadcrumb-item">Home</a></li>
+<li class="breadcrumb-item">Páginas</a></li>
 <li class="breadcrumb-item text-dark" aria-current="page">Tienda</li>
 {% endblock %}
 {% load static %}
@@ -35,14 +35,11 @@ Tienda
                                 <small class="fa fa-star text-primary"></small>
                             </div>
                             <h4 class="mb-3">{{product.title}}</h4>
-                            <p>{{product.content}}</p>
+                            <p>{{product.content|safe}}</p>
                             <h4 class="text-primary">${{product.price}}</h4>
                         </div>
                         
-                        <div class="store-overlay">
-                            <a href="" class="btn btn-primary rounded-pill py-2 px-4 m-2">Más Detalles <i class="fa fa-arrow-right ms-2"></i></a>
-                            <a href="" class="btn btn-dark rounded-pill py-2 px-4 m-2">Añadir al Carrito <i class="fa fa-cart-plus ms-2"></i></a>
-                        </div>
+                        
                     </div>
                 </div>
                 {% endfor %}

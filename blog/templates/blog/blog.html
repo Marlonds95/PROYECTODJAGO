@@ -1,0 +1,48 @@
+{% extends "core/base.html" %}
+{% block Title %}Blog
+    
+    {% endblock  %} 
+{% block h1 %}
+Artículos
+{% endblock  %}
+{% block li %}
+    <li class="breadcrumb-item">Home</a></li>
+    <li class="breadcrumb-item">Páginas</a></li>
+    <li class="breadcrumb-item text-dark" aria-current="page">Actículos</li>
+{% endblock %}
+{% load static %}
+{% block content  %}
+
+{% for blog in blogs %}
+
+    <!-- Article Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                    <img class="mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="{{blog.image.url}}" alt="">
+                </div>
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                    <div class="section-title">
+                        <p class="fs-5 fw-medium fst-italic text-primary">{{blog.published|date:"SHORT_DATE_FORMAT"}}</p>
+                        <h1 class="display-6">{{blog.title}}</h1>
+                    </div>
+                    
+                    <p class="mb-4">{{blog.content|safe}}</p>
+                    {% if user.is_authenticated %}
+               
+        <p class="btn btn-light" ><a href="{% url 'admin:blog_blog_change' blog.id %}" >Editar</p>
+          {% endif %}
+                    <span class="section-heading-under">Publicado por <em><b>{{blog.author}}</b></em>{% for category in blog.category.all  %}
+                        <em><a href="{% url 'category' category.id %}" class="link">{{category.name}}</a>{% if not forloop.last %},{% endif %} </em>{% endfor %}
+                      </span>
+                      
+                </div>
+            </div>
+        </div>
+    </div>
+    
+        
+        
+    {% endfor %}
+    {% endblock  %}
